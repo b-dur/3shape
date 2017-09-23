@@ -1,0 +1,7 @@
+{
+  "name": "3shape",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Bardur Pihl <b-dur@b-dur.dk>",
+  "license": "MIT"
+}
