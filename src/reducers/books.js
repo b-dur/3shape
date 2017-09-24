@@ -1,15 +1,17 @@
 import { actions } from '../actions';
 
-export default (state = { books: [] }, {type, books}) => {
-  switch (type) {
+export default (state = { books: [] }, action) => {
+  switch (action.type) {
     case actions.BOOKS_LOADED:
-      if (!books.items || books.items.lenght === 0) {
+      if (!action.books.items || action.books.items.lenght === 0) {
         return state;
       }
       return {
-        books: state.books.concat(books.items),
+        books: state.books.concat(action.books.items),
       };
 
+      case actions.BOOK_SELECTED:
+      console.log(action.id);
     default:
       return state;
   }
