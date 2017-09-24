@@ -1,15 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import store from './store'
 import './index.css';
 import App from './App';
+import BookDetail from './containers/BookDetail';
 import registerServiceWorker from './registerServiceWorker';
-import {BookApi} from './services';
+import { BookApi } from './services';
+
+const test = (<div>hey</div>);
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <Router basename="/">
+      <div>
+        <Route exact path="/book/:id" component={BookDetail} />
+        <Route exact path="/" component={App} />
+      </div>
+    </Router>
   </Provider>,
   document.getElementById('root'));
 registerServiceWorker();
