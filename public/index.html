@@ -1,16 +1,21 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="theme-color" content="#000000">
-    <!--
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
+  <!--
       manifest.json provides metadata used when your web app is added to the
       homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-    <!--
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+  <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+  <link rel="stylesheet" href="%PUBLIC_URL%/css/vendor.min.css">
+  <link rel="stylesheet" href="%PUBLIC_URL%/css/corporate.min.css">
+  <!-- <link rel="stylesheet" href="https://www.3shape.com/Sitecore_Assets/build/css/vendor.min.css">
+  <link rel="stylesheet" href="https://www.3shape.com/Sitecore_Assets/build/css/corporate.min.css"> -->
+  <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
       Only files inside the `public` folder can be referenced from the HTML.
@@ -19,22 +24,556 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>
-      You need to enable JavaScript to run this app.
-    </noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+  <title>React App</title>
+</head>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+<body>
+  <noscript>
+    You need to enable JavaScript to run this app.
+  </noscript>
+  <header>
+    <nav class="navbar navbar-default navigation" role="navigation">
+      <div class="container-fluid max-site-width group-secondary">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed btn-menu" data-toggle="collapse" data-target="#top-menu">
+              <span class="sr-only">Menu</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+          </button>
+          <button type="button" class="navbar-toggle collapsed btn-search" data-toggle="collapse" data-target="#search">
+              <span class="sr-only">Search</span>
+              <span class="glyphicon glyphicon-search navbar-header-icon"></span>
+          </button>
+          <button type="button" class="navbar-toggle collapsed btn-language" data-toggle="collapse" data-target="#languages">
+              <span class="glyphicon glyphicon-globe navbar-header-icon"></span>
+          </button>
+          <a class="navbar-brand logo" href="/">
+              <span class="sr-only">3Shape</span>
+              <img alt="Brand" src="https://www.3shape.com/Sitecore_Assets/Content/Images/3shape-logo.png">
+          </a>
+        </div>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+        <div class="collapse navbar-collapse">
+
+
+          <div class="navbar-right search-form-desktop-container">
+            <form action="/api/sitecore/Search/PostSearch" class="navbar-form search-form-desktop" data-ajax="false" method="post" role="search"
+              novalidate="novalidate">
+              <div class="input-group">
+                <input type="text" class="form-control search-input-desktop" name="q">
+                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+              </div>
+            </form>
+          </div>
+
+
+          <ul class="nav navbar-nav navbar-right menu-secondary placeholder-min">
+            <li>
+              <a href="/en/Contact-Us">Contact</a>
+            </li>
+
+            <li>
+              <a href="/en/About-3Shape">About 3Shape</a>
+            </li>
+
+
+          </ul>
+
+          <div class="language-switcher navbar-right" data-current-lang="en">
+            <span>Languages</span>
+            <ul>
+              <li><a href="http://www.3shape.com/zh-cn" data-lang="zh-cn">中文</a></li>
+              <li><a href="http://www.3shape.com/de-de" data-lang="de-de">Deutsch</a></li>
+              <li><a href="http://www.3shape.com/en" data-lang="en">English</a></li>
+              <li><a href="http://www.3shape.com/es-es" data-lang="es-es">Español</a></li>
+              <li><a href="http://www.3shape.com/fr-fr" data-lang="fr-fr">Français</a></li>
+              <li><a href="http://www.3shape.com/it-it" data-lang="it-it">Italiano</a></li>
+              <li><a href="http://www.3shape.com/pt-br" data-lang="pt-br">Português (Brasil)</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+      <div class="group-primary">
+        <div class="collapse navbar-collapse" id="top-menu">
+          <ul class="menu-primary nav navbar-nav">
+            <!--<div class="menu-header visible-xs-block">Menu</div> -->
+            <li class="dropdown opensubpanel item-primary">
+              <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" target="">Discover <span class="glyphicon glyphicon-menu-right pull-right visible-xs-inline-block"></span></a>
+
+              <ul class="dropdown-menu subpanel" role="menu">
+                <div class="subpanel-container">
+                  <li class="closesubpanel"><a href="#"><span class="glyphicon glyphicon-menu-left pull-left visible-xs-inline-block"></span> Back</a></li>
+                  <li class="thid-navi-level">
+                    <a href="/en/Discover/Dentist" class="item-img-link"><img src="/-/media/Images/Subnavigation-Images/discover/menu_dentist_discover.png" alt="Dentist"></a>
+                    <div class="item-title">
+                      <a class="link-lvl-3" href="/en/Discover/Dentist" target=""><span>Dentist</span></a>
+                    </div>
+                  </li>
+                  <li class="thid-navi-level">
+                    <a href="/en/Discover/Dental-Lab" class="item-img-link"><img src="/-/media/Images/Subnavigation-Images/discover/219x104.jpg" alt="Dental Lab"></a>
+                    <div class="item-title">
+                      <a class="link-lvl-3" href="/en/Discover/Dental-Lab" target=""><span>Dental Lab</span></a>
+                    </div>
+                  </li>
+                  <li class="thid-navi-level">
+                    <a href="/en/Discover/Implantologist" class="item-img-link"><img src="/-/media/Images/Subnavigation-Images/discover/implantologist.jpg" alt="Implantologist"></a>
+                    <div class="item-title">
+                      <a class="link-lvl-3" href="/en/Discover/Implantologist" target=""><span>Implantologist</span></a>
+                    </div>
+
+
+                  </li>
+                  <li class="thid-navi-level">
+                    <a href="/en/Discover/Orthodontic-Lab" class="item-img-link"><img src="/-/media/Images/Subnavigation-Images/discover/ortholab.jpg" alt="Orthodontic Lab"></a>
+                    <div class="item-title">
+                      <a class="link-lvl-3" href="/en/Discover/Orthodontic-Lab" target=""><span>Orthodontic Lab</span></a>
+                    </div>
+
+
+                  </li>
+                  <li class="thid-navi-level">
+                    <a href="/en/Discover/Orthodontist" class="item-img-link"><img src="/-/media/Images/Subnavigation-Images/discover/orthodontist.jpg" alt="Orthodontist"></a>
+                    <div class="item-title">
+                      <a class="link-lvl-3" href="/en/Discover/Orthodontist" target=""><span>Orthodontist</span></a>
+                    </div>
+
+
+                  </li>
+                  <li class="thid-navi-level">
+                    <a href="/en/Discover/Audio" class="item-img-link"><img src="/-/media/Images/Subnavigation-Images/discover/audio_219_104.png" alt="Audio"></a>
+                    <div class="item-title">
+                      <a class="link-lvl-3" href="/en/Discover/Audio" target=""><span>Audio</span></a>
+                    </div>
+
+
+                  </li>
+
+                </div>
+              </ul>
+            </li>
+            <li class="dropdown opensubpanel item-primary">
+              <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Products <span class="glyphicon glyphicon-menu-right pull-right visible-xs-inline-block"></span></a>
+
+              <ul class="dropdown-menu subpanel" role="menu">
+                <div class="subpanel-container">
+                  <li class="closesubpanel"><a href="#"><span class="glyphicon glyphicon-menu-left pull-left visible-xs-inline-block"></span> Back</a></li>
+                  <li class="thid-navi-level">
+                    <a href="/en/Products/Trios/Intraoral-Scanners" class="item-img-link"><img src="/-/media/Images/Subnavigation-Images/177x104/menu_banner_intraoral_scanners.jpg" alt="TRIOS"></a>
+                    <div class="item-title">
+                      TRIOS </div>
+
+                    <div class="nav-link-container-3">
+                      <a class="link-lvl-3" href="/en/Products/Trios/Intraoral-Scanners" target="">
+          <span>Intraoral Scanners</span>
+      </a>
+
+                    </div>
+                    <div class="nav-link-container-3">
+                      <a class="link-lvl-3" href="/en/Products/Trios/Design-Studio" target="">
+          <span>Design Studio</span>
+      </a>
+
+                    </div>
+
+                  </li>
+                  <li class="thid-navi-level">
+                    <a href="/en/Products/Dental-Labs/CAD-Software" class="item-img-link"><img src="/-/media/Images/Subnavigation-Images/177x104/menu_cadsoft_dental-system.jpg" alt="Dental System"></a>
+                    <div class="item-title">
+                      Dental System </div>
+
+                    <div class="nav-link-container-3">
+                      <a class="link-lvl-3" href="/en/Products/Dental-Labs/CAD-Software" target="">
+          <span>CAD Software</span>
+      </a>
+
+                    </div>
+                    <div class="nav-link-container-3">
+                      <a class="link-lvl-3" href="/en/Products/Dental-Labs/E-Scanners" target="">
+          <span>E scanners</span>
+      </a>
+
+                    </div>
+                    <div class="nav-link-container-3">
+                      <a class="link-lvl-3" href="/en/Products/Dental-Labs/Lab-Scanners" target="">
+          <span>Lab scanners</span>
+      </a>
+
+                    </div>
+
+                  </li>
+                  <li class="thid-navi-level">
+                    <a href="/en/Products/Orthodontic-system/Intraoral-Scanner-Orthodontics-Software" class="item-img-link"><img src="/-/media/Images/Subnavigation-Images/177x104/menu_ortho_banner.jpg" alt="TRIOS Orthodontics"></a>
+                    <div class="item-title">
+                      TRIOS Orthodontics </div>
+
+                    <div class="nav-link-container-3">
+                      <a class="link-lvl-3" href="/en/Products/Orthodontic-system/Intraoral-Scanner-Orthodontics-Software" target="">
+          <span>Intraoral Scanner &amp; Orthodontics Software</span>
+      </a>
+
+                    </div>
+
+                  </li>
+                  <li class="thid-navi-level">
+                    <a href="/en/Products/Orthodontic-system/CAD-software-Lab-Scanners" class="item-img-link"><img src="/-/media/Images/Subnavigation-Images/menu-image-3shape-orthodontics.jpg" alt="Orthodontic System"></a>
+                    <div class="item-title">
+                      Orthodontic System </div>
+
+                    <div class="nav-link-container-3">
+                      <a class="link-lvl-3" href="/en/Products/Orthodontic-system/CAD-software-Lab-Scanners" target="">
+          <span>CAD software &amp; Lab Scanners</span>
+      </a>
+
+                    </div>
+
+                  </li>
+                  <li class="thid-navi-level">
+                    <a href="/en/Products/Implant-Studio/CAD-Software" class="item-img-link"><img src="/-/media/Images/Subnavigation-Images/menu-image-implant-studio.jpg" alt="Implant Studio"></a>
+                    <div class="item-title">
+                      Implant Studio </div>
+
+                    <div class="nav-link-container-3">
+                      <a class="link-lvl-3" href="/en/Products/Implant-Studio/CAD-Software" target="">
+          <span>CAD Software</span>
+      </a>
+
+                    </div>
+
+                  </li>
+                  <li class="thid-navi-level">
+                    <a href="/en/new-products/x1/cbct-scanners" class="item-img-link"><img src="/-/media/Images/Subnavigation-Images/177x104/menu_banner_X1.jpg" alt="X1"></a>
+                    <div class="item-title">
+                      X1 </div>
+
+                    <div class="nav-link-container-3">
+                      <a class="link-lvl-3" href="/en/new-products/x1/cbct-scanners" target="">
+          <span>CBCT scanners</span>
+      </a>
+
+                    </div>
+
+                  </li>
+                  <li class="thid-navi-level">
+                    <a href="/en/Products/Audio-system" class="item-img-link"><img src="/-/media/Images/Subnavigation-Images/Audio170x100.png" alt="Audio"></a>
+                    <div class="item-title">
+                      <a class="link-lvl-3" href="/en/Products/Audio-system" target=""><span>Audio</span></a>
+                    </div>
+
+
+                  </li>
+                  <li class="thid-navi-level">
+                    <a href="/en/Products/Communicate" class="item-img-link"><img src="/-/media/Images/Subnavigation-Images/177x104/communicate_nav_menu.jpg" alt="Communicate"></a>
+                    <div class="item-title">
+                      <a class="link-lvl-3" href="/en/Products/Communicate" target=""><span>Communicate</span></a>
+                    </div>
+
+
+                  </li>
+                  <li class="thid-navi-level">
+                    <a href="/en/Products/Cambridge" class="item-img-link"><img src="/-/media/Images/Subnavigation-Images/177x104/CAMbridge_top_image_preview_177_104.png" alt="CAMbridge™"></a>
+                    <div class="item-title">
+                      <a class="link-lvl-3" href="/en/Products/Cambridge" target=""><span>CAMbridge™</span></a>
+                    </div>
+
+
+                  </li>
+                  <li class="thid-navi-level">
+                    <a href="/en/Products/Cad-Points" class="item-img-link"><img src="/-/media/Images/Subnavigation-Images/177x104/CadPoints_TILE_05_INTRO_D_RGB_177x104.jpg" alt="CAD Points"></a>
+                    <div class="item-title">
+                      <a class="link-lvl-3" href="/en/Products/Cad-Points" target=""><span>CAD Points</span></a>
+                    </div>
+
+
+                  </li>
+
+                </div>
+              </ul>
+            </li>
+            <li class="dropdown opensubpanel item-primary">
+              <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" target="">Knowledge Center <span class="glyphicon glyphicon-menu-right pull-right visible-xs-inline-block"></span></a>
+
+              <ul class="dropdown-menu subpanel" role="menu">
+                <div class="subpanel-container">
+                  <li class="closesubpanel"><a href="#"><span class="glyphicon glyphicon-menu-left pull-left visible-xs-inline-block"></span> Back</a></li>
+                  <li class="thid-navi-level">
+                    <a href="/en/Knowledge-Center/Case-Studies" class="item-img-link"><img src="/-/media/Images/Subnavigation-Images/Knowledge-center/caseStudies.jpg" alt="Cases"></a>
+                    <div class="item-title">
+                      <a class="link-lvl-3" href="/en/Knowledge-Center/Case-Studies" target=""><span>Cases</span></a>
+                    </div>
+
+
+                  </li>
+                  <li class="thid-navi-level">
+                    <a href="/en/Knowledge-Center/Exhibitions-and-Events" class="item-img-link"><img src="/-/media/Images/Subnavigation-Images/Knowledge-center/events.jpg" alt="Exhibitions and Events"></a>
+                    <div class="item-title">
+                      <a class="link-lvl-3" href="/en/Knowledge-Center/Exhibitions-and-Events" target=""><span>Exhibitions and Events</span></a>
+                    </div>
+
+
+                  </li>
+                  <li class="thid-navi-level">
+                    <a href="/en/Knowledge-Center/Guides" class="item-img-link"><img src="/-/media/Images/Subnavigation-Images/177x104/guides_page_menu.jpg" alt="Guides"></a>
+                    <div class="item-title">
+                      <a class="link-lvl-3" href="/en/Knowledge-Center/Guides" target=""><span>Guides</span></a>
+                    </div>
+
+
+                  </li>
+                  <li class="thid-navi-level">
+                    <a href="/en/Knowledge-Center/Videos" class="item-img-link"><img src="/-/media/Images/Subnavigation-Images/Knowledge-center/videos.jpg" alt="Videos"></a>
+                    <div class="item-title">
+                      <a class="link-lvl-3" href="/en/Knowledge-Center/Videos" target=""><span>Videos</span></a>
+                    </div>
+
+
+                  </li>
+                  <li class="thid-navi-level">
+                    <a href="/en/Knowledge-Center/Webinars" class="item-img-link"><img src="/-/media/Images/Subnavigation-Images/Knowledge-center/webinars/42webinarssubnav.jpg" alt="Webinars"></a>
+                    <div class="item-title">
+                      <a class="link-lvl-3" href="/en/Knowledge-Center/Webinars" target=""><span>Webinars</span></a>
+                    </div>
+
+
+                  </li>
+                  <li class="thid-navi-level">
+                    <a href="/en/Knowledge-Center/News-and-Press" class="item-img-link"><img src="/-/media/Images/Subnavigation-Images/Knowledge-center/news.jpg" alt="News and Press"></a>
+                    <div class="item-title">
+                      <a class="link-lvl-3" href="/en/Knowledge-Center/News-and-Press" target=""><span>News and Press</span></a>
+                    </div>
+
+
+                  </li>
+
+                </div>
+              </ul>
+            </li>
+            <li class="dropdown opensubpanel item-primary">
+              <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Customer Programs <span class="glyphicon glyphicon-menu-right pull-right visible-xs-inline-block"></span></a>
+
+              <ul class="dropdown-menu subpanel" role="menu">
+                <div class="subpanel-container">
+                  <li class="closesubpanel"><a href="#"><span class="glyphicon glyphicon-menu-left pull-left visible-xs-inline-block"></span> Back</a></li>
+                  <li class="thid-navi-level">
+                    <a href="/en/Customer-Programs/CLINIcare" class="item-img-link"><img src="/-/media/Images/Subnavigation-Images/177x104/subnavigation_Clinicare.png" alt="CLINIcare"></a>
+                    <div class="item-title">
+                      <a class="link-lvl-3" href="/en/Customer-Programs/CLINIcare" target=""><span>CLINIcare</span></a>
+                    </div>
+
+
+                  </li>
+                  <li class="thid-navi-level">
+                    <a href="/en/Customer-Programs/LABcare" class="item-img-link"><img src="/-/media/Images/Subnavigation-Images/177x104/menu_labcare.png" alt="LabCare"></a>
+                    <div class="item-title">
+                      <a class="link-lvl-3" href="/en/Customer-Programs/LABcare" target=""><span>LabCare</span></a>
+                    </div>
+
+
+                  </li>
+                  <li class="thid-navi-level">
+                    <a href="/en/Customer-Programs/3Shape-Ready-Programs/TRIOS-Ready" class="item-img-link"><img src="/-/media/Images/Subnavigation-Images/Ready-Pages/TRIOS_01_Top_image_small.jpg" alt="3Shape Ready Programs"></a>
+                    <div class="item-title">
+                      3Shape Ready Programs </div>
+
+                    <div class="nav-link-container-3">
+                      <a class="link-lvl-3" href="/en/Customer-Programs/3Shape-Ready-Programs/TRIOS-Ready" target="">
+          <span>TRIOS Ready</span>
+      </a>
+
+                    </div>
+                    <div class="nav-link-container-3">
+                      <a class="link-lvl-3" href="/en/Customer-Programs/3Shape-Ready-Programs/TRIOS-Ready-Ortho" target="">
+          <span>TRIOS Ready Ortho</span>
+      </a>
+
+                    </div>
+                    <div class="nav-link-container-3">
+                      <a class="link-lvl-3" href="/en/Customer-Programs/3Shape-Ready-Programs/Implant-Studio-Ready" target="">
+          <span>Implant Studio Ready</span>
+      </a>
+
+                    </div>
+
+                  </li>
+                  <li class="thid-navi-level">
+                    <a href="/en/Customer-Programs/Ortho-Partner-Integrations/Bracket-Library-Integrations" class="item-img-link"><img src="/-/media/Images/Subnavigation-Images/177x104/subnavigation_Ortho_partner_integrations.jpg" alt="Ortho Partner Integrations"></a>
+                    <div class="item-title">
+                      Ortho Partner Integrations </div>
+
+                    <div class="nav-link-container-3">
+                      <a class="link-lvl-3" href="/en/Customer-Programs/Ortho-Partner-Integrations/Bracket-Library-Integrations" target="">
+          <span>Bracket Library Integrations</span>
+      </a>
+
+                    </div>
+                    <div class="nav-link-container-3">
+                      <a class="link-lvl-3" href="/en/Customer-Programs/Ortho-Partner-Integrations/Orthodontic-Solution-Providers" target="">
+          <span>Orthodontic Solution Providers</span>
+      </a>
+
+                    </div>
+                    <div class="nav-link-container-3">
+                      <a class="link-lvl-3" href="/en/Customer-Programs/Ortho-Partner-Integrations/Sleep-related-Solution-Providers" target="">
+          <span>Sleep-related Solution Providers</span>
+      </a>
+
+                    </div>
+
+                  </li>
+
+                </div>
+              </ul>
+            </li>
+
+          </ul>
+        </div>
+        <div class="collapse navbar-collapse" id="search">
+
+          <form action="/api/sitecore/Search/PostSearch" class="navbar-form search-form-mobile" id="search" method="post" role="search"
+            novalidate="novalidate">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search 3Shape.com" name="q">
+              <div class="input-group-btn">
+                <button class="btn btn-default btn-blue" type="submit">Search</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="language-switcher-mobile collapse navbar-collapse" id="languages">
+          <ul>
+            <li><a href="http://www.3shape.com/zh-cn" data-lang="zh-cn">中文</a></li>
+            <li><a href="http://www.3shape.com/de-de" data-lang="de-de">Deutsch</a></li>
+            <li><a href="http://www.3shape.com/en" data-lang="en">English</a></li>
+            <li><a href="http://www.3shape.com/es-es" data-lang="es-es">Español</a></li>
+            <li><a href="http://www.3shape.com/fr-fr" data-lang="fr-fr">Français</a></li>
+            <li><a href="http://www.3shape.com/it-it" data-lang="it-it">Italiano</a></li>
+            <li><a href="http://www.3shape.com/pt-br" data-lang="pt-br">Português (Brasil)</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+  </header>
+  <div id="root"></div>
+
+  <footer>
+    <div class="container-fluid max-site-width">
+    <div class="row">
+        <div class="col-xs-12 col-sm-4">
+            <div class="footer-map">
+                <img src="https://www.3shape.com/Sitecore_Assets/Content/Images/map2.png" class="img-responsive img-full-width">
+                
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-4 footer-links-group">
+            <div class="row no-gutter-right footer-navigation">
+                <div id="038CA00DFEF54C5AB1D2954E86B89C2D">
+<div>
+    <div id="45C8BC2E4CD24BD9B46E48E60BD470C0"><div class="col-xs-6">
+    <p class="column-title first-size">Press Room</p>
+    <ul class="footer-links social-links placeholder-min">
+            <li>
+        <a href="/corporate/knowledge-center/news-and-press#press-room" target="_blank">Press releases</a>
+    </li>
+
+    <li>
+        <a href="/en/Knowledge-Center/News-and-Press" target="_blank">News List</a>
+    </li>
+
+    <li>
+        <a href="/corporate/knowledge-center/news-and-press#newsletter" target="_blank">Newsletter </a>
+    </li>
+
+
+    </ul>
+</div></div><div id="635258EF77C64113B921F6D3A719E462"><div class="col-xs-6">
+    <p class="column-title first-size">Careers</p>
+    <ul class="footer-links social-links placeholder-min">
+            <li>
+        <a href="/corporate/careers#vacancies" target="_blank">Job Vacancies</a>
+    </li>
+
+    <li>
+        <a href="/corporate/careers/#recruiting-and-onboarding" target="_blank">Recruitment and Onboarding</a>
+    </li>
+
+    <li>
+        <a href="/Corporate/Careers/#working-at-3shape" target="_blank">Working at 3Shape</a>
+    </li>
+
+
+    </ul>
+</div></div>
+</div></div><div id="038CA00DFEF54C5AB1D2954E86B89C2D">
+<div>
+    
+</div></div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-4 footer-links-group">
+            <div class="row no-gutter-right">
+                <div id="038CA00DFEF54C5AB1D2954E86B89C2D">
+<div>
+    <div id="D5FB00379AED424A950E9F1788140BDE"><div class="col-xs-6">
+    <p class="column-title first-size">How to buy</p>
+    <ul class="footer-links social-links placeholder-min">
+            <li>
+        <a href="http://www.3shape.com/shop" target="_blank">Webshop</a>
+    </li>
+
+    <li>
+        <a href="/en/Contact-reseller" target="_blank">Contact a reseller</a>
+    </li>
+
+
+    </ul>
+</div></div><div id="7ED2CB3722F242A58C0A405E9C0C85DA"><div class="col-xs-6">
+    <p class="column-title first-size">Social Media</p>
+    <ul class="footer-links social-links placeholder-min">
+            <li>
+        <a href="https://www.facebook.com/3Shape" target="_blank">Facebook</a>
+    </li>
+
+    <li>
+        <a href="https://twitter.com/3shape" target="_blank">Twitter</a>
+    </li>
+
+    <li>
+        <a href="https://www.linkedin.com/company/3shape" target="_blank">LinkedIn</a>
+    </li>
+
+    <li>
+        <a href="https://www.youtube.com/user/3shape" target="_blank">YouTube</a>
+    </li>
+
+    <li>
+        <a href="https://instagram.com/3shape" target="_blank">Instagram</a>
+    </li>
+
+
+    </ul>
+</div></div>
+</div></div><div id="038CA00DFEF54C5AB1D2954E86B89C2D">
+<div>
+    
+</div></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <section>
+        <div class="container-fluid max-site-width copyrights padding-footer">
+            <p>
+                Copyright © 3Shape A/S  • <a href="/privacy-policy">Privacy policy</a> • <a href="mailto:info@3shape.com">info@3shape.com</a> • <a href="/VirtualPatentMarking">Virtual Patent Marking</a>
+            </p>
+            <p>3Shape A/S • Holmens Kanal 7, 4. 1060 Copenhagen K Denmark • P: +45 7027 2620</p>
+        </div>
+    </section>
+</footer>
+</body>
+
 </html>
