@@ -9,8 +9,6 @@ import BookDetail from './containers/BookDetail';
 import registerServiceWorker from './registerServiceWorker';
 import { BookApi } from './services';
 
-const test = (<div>hey</div>);
-
 ReactDOM.render(
   <Provider store={store}>
     <Router basename="/">
