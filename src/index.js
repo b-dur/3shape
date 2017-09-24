@@ -6,6 +6,7 @@ import actions from './actions';
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
+import {BookApi} from './services';
 
 ReactDOM.render(
   <Provider store={store}>
@@ -14,6 +15,4 @@ ReactDOM.render(
   document.getElementById('root'));
 registerServiceWorker();
 
-fetch('https://www.googleapis.com/books/v1/volumes?q=3shape')
-.then(x => x.json())
-.then(x => store.dispatch(actions.loadBooks(x)));
+BookApi.loadBooks(store.dispatch, 0);

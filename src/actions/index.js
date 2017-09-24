@@ -1,10 +1,10 @@
 export const actions = {
-  'LOAD_BOOKS': Symbol('LOAD_BOOKS'),
+  'BOOKS_LOADED': Symbol('BOOKS_LOADED'),
 };
 
 export default {
-  loadBooks: (books) => ({
-    type: actions.LOAD_BOOKS,
+  BOOKS_LOADED: (books) => ({
+    type: actions.BOOKS_LOADED,
     books
   })
 };
