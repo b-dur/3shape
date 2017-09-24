@@ -11,7 +11,8 @@ export default (state = { books: [] }, action) => {
       };
 
       case actions.BOOK_SELECTED:
-      console.log(action.id);
+      return state;
+
     default:
       return state;
   }
