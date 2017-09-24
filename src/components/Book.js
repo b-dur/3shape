@@ -1,7 +1,7 @@
 import React from 'react';
 import BookPrice from './BookPrice';
 
-export default ({ volumeInfo: { title, subtitle, authors = [], imageLinks }, saleInfo: { listPrice, retailPrice } }) => (
+export default ({ volumeInfo: { title, subtitle, authors = [], imageLinks= {} }, saleInfo: { listPrice, retailPrice } }) => (
   <article className="book">
     <img className="book__img" src={imageLinks.smallThumbnail} />
     <div className="book__info">

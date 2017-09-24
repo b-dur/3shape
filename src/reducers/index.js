@@ -1,16 +1,13 @@
-import { actions } from '../actions';
+import { combineReducers } from 'redux'
+import books from './books';
+import pagination from './pagination';
 
-export default (state = {}, action) => {
-  switch (action.type) {
-    case actions.LOAD_BOOKS:
-      console.log(action);
-      return {
-        ...state,
-        books: action.books.items,
-        totalBooks: action.totalItems
-      };
+const bookApp = combineReducers({
+  books,
+  pagination
+})
 
-    default:
-      return state;
-  }
-}
+export default bookApp
+
+
+
