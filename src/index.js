@@ -11,7 +11,7 @@ import { BookApi } from './services';
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router basename="/">
+    <Router basename="/3shape/">
       <div>
         <Route exact path="/book/:id" component={BookDetail} />
         <Route exact path="/" component={App} />
